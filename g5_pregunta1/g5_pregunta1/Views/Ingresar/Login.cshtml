@@ -1,0 +1,23 @@
+﻿@model g5_pregunta1.Clases.Usuario
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_autenticar.cshtml";
+}
+
+<h2>Ingresar Credenciales</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(d => d.EMAIL)
+    @Html.TextBoxFor(d => d.EMAIL)
+    <br />
+    @Html.LabelFor(d => d.PASS)
+    @Html.PasswordFor(d => d.PASS)
+    <br />
+    <button>Ingresar</button>
+    <div class="col-12">
+        <p class="mb-0"> <a href="@Url.Action("Create", "USUARIOS")">Registrarse</a></p>
+    </div>
+}
+<br />
+@TempData["Mensaje"]
